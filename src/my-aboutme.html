@@ -1,0 +1,48 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="my-aboutme">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+       google-map {
+        height: 600px;
+      }
+
+       #profile_pic {
+	    width: 150px;
+	    height: 150px;
+	    background: #ddd;
+	  }
+
+	  iron-image{
+	  	border-radius: 50%;
+	  }
+
+	  .profile{
+	  	text-align: center;
+	  }
+    </style>
+
+    <div class="card">
+      <div class="profile">
+      	<iron-image sizing="contain" id="profile_pic" alt="My Picture" src="../images/profile.jpg"></iron-image>
+      </div>
+      <h1>I'm Cody</h1>
+      <p>This is a page about me</p>
+    </div>
+    
+  </template>
+
+  <script>
+    Polymer({
+      is: 'my-aboutme'
+    });
+  </script>
+</dom-module>
