@@ -7,8 +7,8 @@
     <style include="shared-styles">
       :host {
         display: block;
-
         padding: 10px;
+        text-align: center;
       }
 
        google-map {
@@ -28,6 +28,25 @@
 	  .profile{
 	  	text-align: center;
 	  }
+
+    iframe{
+      width :70%;
+    }
+
+    p{
+      color: grey;
+      font-family: "Verdana";
+    }
+    h6{
+      font-family: "Monospace";
+    }
+
+    @media (max-width: 767px) {
+      iframe{
+        width :100%;
+        height: 100%;
+      }
+    }
     </style>
 
     <div class="card">
@@ -35,7 +54,22 @@
       	<iron-image sizing="contain" id="profile_pic" alt="My Picture" src="../images/profile.jpg"></iron-image>
       </div>
       <h1>I'm Cody</h1>
-      <p>This is a page about me</p>
+      <p> I grow up in the magnificent city of Shanghai, China.</p>
+     
+      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1473891160046!6m8!1m7!1sF%3A-zvhMOmJafDA%2FUjX-nGEBE3I%2FAAAAAAAADM8%2Fu5hgenXFFwI8j6bV8CqEb0EFAeqhaFSJQ!2m2!1d31.238067!2d121.490559!3f86.63!4f20.040000000000006!5f1.1721996200926128" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen ></iframe>
+      
+      <h6>A 360 pano. of the Bond, Shanghai </h6>
+      <p> I went to elementary school in Shanghai from grade 1 - 6.</p>
+      <p> Then I moved to Plano, Texas for middle school and ended up in Torrance, California for high school.</p>
+
+     
+      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1473891840465!6m8!1m7!1sF%3A-ytvOUAOKENk%2FVc65WpgO_JI%2FAAAAAAAA3jQ%2FE7ZwAPjnz4EcPkui1VGvt_4XnFKVtThlg!2m2!1d33.8385201!2d-118.3913651!3f328.42!4f4.390000000000001!5f0.8767935767154755" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <h6>A 360 pano. of Redondo Beach, Torrance </h6>
+      <p> I went to college at University of California, San Diego (UCSD), and majored in Computer Engineering</p>
+
+     
+     <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1473891284859!6m8!1m7!1sF%3A-w4Srvrb-NF8%2FUVTqBf1sZSI%2FAAAAAAAAD9s%2FzEHFvPOTssYgo3s4zd_gAgfb9j5Phje5A!2m2!1d32.8801858!2d-117.2376419!3f286.33!4f12.799999999999997!5f1.1721996200926128" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+     <h6>A 360 pano. of the Geisel Library, UCSD</h6>
     </div>
     
   </template>

@@ -4,7 +4,7 @@
   "fragments": [
     "src/my-locations.html",
     "src/my-aboutme.html",
-    "src/my-view404.html"
+    "src/my-resume.html"
   ],
   "sources": [
    "src/**/*",

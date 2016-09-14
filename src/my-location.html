@@ -14,7 +14,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-location">
   <template>
-    <style > include="shared-styles">
+    <style include="shared-styles">
       :host {
         display: block;
 
@@ -22,13 +22,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
        google-map {
-        height: 600px;
+        height: 550px;
       }
     </style>
 
-    <google-map latitude="32.866567" longitude="-117.218855" zoom="12">
-      <google-map-marker latitude="32.867515" longitude="-117.219040"></google-map-marker>
-    </google-map>
+    <div class="card">
+      <google-map latitude="32.866567" longitude="-117.218855" api-key="AIzaSyCzbAsK46aZmPutawjHACVZThhMYenNz_c" zoom="12">
+        <google-map-marker latitude="32.867515" longitude="-117.219040"></google-map-marker>
+      </google-map>
+    </div>
     
   </template>
 

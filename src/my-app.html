@@ -21,86 +21,114 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="my-icons.html">
+<link rel="import" href="custom-style.html">
 
 <dom-module id="my-app">
   <template>
-    <style>
+    <style include="custom-style">
       :host {
         --app-primary-color: #4285f4;
         --app-secondary-color: black;
-
         display: block;
       }
 
-      app-header {
-        color: #fff;
-        background-color: var(--app-primary-color);
-      }
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
-      }
+      .app-toolbar-0 {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
 
-      .drawer-list {
-        margin: 0 20px;
-      }
-
-      .drawer-list a {
-        display: block;
-
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;-ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+        position: relative;
+        height: 64px;
         padding: 0 16px;
-
-        text-decoration: none;
-
-        color: var(--app-secondary-color);
-
-        line-height: 40px;
+        pointer-events: none;
+        font-size: 20px;
       }
 
-      .drawer-list a.iron-selected {
-        color: black;
+      .app-toolbar-0  > * {
+        pointer-events: auto;
+      }
 
-        font-weight: bold;
+      .app-toolbar-0  > paper-icon-button {
+        font-size: 0;
+      }
+
+      .app-toolbar-0  > [main-title],.app-toolbar-0  > [condensed-title] {
+        pointer-events: none;-ms-flex: 1 1 0.000000001px;
+            -webkit-flex: 1;
+            flex: 1;
+            -webkit-flex-basis: 0.000000001px;
+            flex-basis: 0.000000001px;
+      }
+
+      .app-toolbar-0  > [bottom-item] {
+        position: absolute;
+              right: 0;
+              bottom: 0;
+              left: 0;
+      }
+
+      .app-toolbar-0  > [top-item] {
+        position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+      }
+
+      .app-toolbar-0  > [spacer] {
+        margin-left: 64px;
       }
     </style>
 
-    <app-location route="{{route}}"></app-location>
+    <app-location route="{{route}}" ></app-location>
     <app-route
         route="{{route}}"
         pattern="/:page"
         data="{{routeData}}"
         tail="{{subroute}}"></app-route>
+    <header>
+      <app-toolbar class="x-scope app-toolbar-0">
+        <div main-title>Cody By The Sea</div>
+      </app-toolbar>
 
-    <app-drawer-layout fullbleed>
-      <!-- Drawer content -->
-      <app-drawer>
-        <app-toolbar>Menu</app-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="aboutme" href="/aboutme">About Me</a>
-          <a name="location" href="/location">My Location</a>
-        </iron-selector>
-      </app-drawer>
+      <app-box threshold="64" class="x-scope app-box-0">
+        <div id="background" class="style-scope app-box">
+          <div id="backgroundFrontLayer" class="style-scope app-box"></div>
+        </div>
+        <div id="contentContainer" class="style-scope app-box">
+         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <ul role="navigation" class="nav">
+            <li>
+               <a name="aboutme" href="/aboutme">About Me</a>
+          
+            </li>
+            <li>
+              <a name="location" href="/location">Life</a>
+            </li>
 
-      <!-- Main content -->
-      <app-header-layout has-scrolling-region>
-
-        <app-header condenses reveals effects="waterfall">
-          <app-toolbar>
-            <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div main-title>Cody By The Sea</div>
-          </app-toolbar>
-        </app-header>
-
-        <iron-pages
+            <li>
+              <a name="resume" href="/resume">Work</a>
+            </li>
+          </ul>
+          </iron-selector>
+        </div>
+      </app-box>
+       <iron-pages
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
             role="main">
           <my-aboutme name="aboutme"></my-aboutme>
           <my-location name="location"></my-location>
+          <my-resume name="resume"></my-resume>
           <my-view404 name="view404"></my-view404>
         </iron-pages>
-      </app-header-layout>
-    </app-drawer-layout>
+    </header>
+
   </template>
 
   <script>

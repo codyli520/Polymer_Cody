@@ -1,0 +1,67 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- shared styles for all views -->
+<dom-module id="custom-style">
+  <template>
+    <style>
+    body{
+      margin: 0;
+          font-family: 'Roboto', 'Noto', sans-serif;
+          background-color: #eee;
+          scroll-behavior: smooth;
+    }
+
+    header{
+      background-color: white;
+          height: 128px;
+    }
+
+    app-toolbar {
+      font-size: 18px;
+          font-weight: 400;
+          letter-spacing: 5px;
+          text-align: center;
+          color: #1a237e;
+    }
+
+    .nav {
+      height: 64px;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .nav li{
+      display: inline-block;
+          list-style: none;
+    }
+
+    .nav a {
+      display: inline-block;
+          font-weight: 12px;
+          line-height: 64px;
+          text-decoration: none;
+          color: black;
+          font-weight: 300;
+          margin: 0 10px;
+    }
+
+    .nav a:hover {
+      color: #444;
+          border-bottom: 1px solid #999;
+    }
+
+    [threshold-triggered]{
+      position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1;
+          -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+    }
+
+ </style>
+  </template>
+</dom-module>
